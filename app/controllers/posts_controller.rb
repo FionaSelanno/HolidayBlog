@@ -15,6 +15,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       redirect_to @post
+    else
+      render 'edit'
     end
   end
 
