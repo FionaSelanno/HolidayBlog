@@ -1,3 +1,20 @@
+This is Blog about Holidays. A user can create an account and make his own profile. Once an account is made the user can make posts on his own profile page.
+The user can upload (a) pictures(s) to his posts.
+If a user is logged in, he can make comments on posts of other users and like them. If a user i not logged in the user can only see a feed of all the posts.
+The most recent post is on top.
+
+Used gems:
+-For the authentication I used Devise
+-For the autorization I used CanCan
+-For uploading I used CarrierWave
+
+Future features:
+search field
+automatic tags
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
