@@ -1,4 +1,6 @@
 <%= form_for @post do |f| %>
+  <%= @post.errors.full_messages.to_sentence %>
+
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title, size: 25 %>

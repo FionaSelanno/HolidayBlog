@@ -15,7 +15,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       redirect_to @post
+    else
+      render 'edit'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   def new
@@ -24,8 +32,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new( post_params )
+    # if saved redirect to showpage
     if @post.save
       redirect_to @post
+    # if not well saved redisplay the form with render so the valid info won't get lost
+  else
+    render :new
   end
 end
 
