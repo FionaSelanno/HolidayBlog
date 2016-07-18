@@ -18,6 +18,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+  end
+
   def new
     @post = Post.new
   end
@@ -26,12 +32,6 @@ class PostsController < ApplicationController
     @post = Post.new( post_params )
     if @post.save
       redirect_to @post
-  end
-
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
   end
 end
 
