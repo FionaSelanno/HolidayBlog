@@ -30,8 +30,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new( post_params )
+    # if saved redirect to showpage
     if @post.save
       redirect_to @post
+    # if not well saved redisplay the form with render so the valid info won't get lost
+  else
+    render :new
   end
 end
 
