@@ -4,4 +4,5 @@
 
 <% @posts.each do |post| %>
  <p><%= link_to post.title, post %></p>
+ <p><%= post.created_at.strftime("%B, %d, %Y")%></p>
 <% end %>

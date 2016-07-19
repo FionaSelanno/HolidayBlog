@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
   end
 
   def show
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     # if not well saved redisplay the form with render so the valid info won't get lost
-  else
+    else
     render :new
   end
 end
