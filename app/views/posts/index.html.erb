@@ -1,8 +1,9 @@
 <h1>All Holiday Posts</h1>
 
-<%= link_to "[Add new post]", new_post_path%>
-
-<% @posts.each do |post| %>
- <p><%= link_to post.title, post %></p>
- <p><%= post.created_at.strftime("%B, %d, %Y")%></p>
+<% if user_signed_in? %>
+  <%= render "form" %>
 <% end %>
+
+<%= render @posts %>
+
+<%= link_to "[Add new post]", new_post_path%>
