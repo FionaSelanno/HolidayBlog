@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :title, presence: true, length: {maximum: 20}
+  belongs_to :user
+  validates :title, presence: true
   validates :content, length: {minimum: 40}
 end

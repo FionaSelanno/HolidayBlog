@@ -1,0 +1,11 @@
+<div class="col-xs-8">
+  <% @posts.each do |post| %>
+   <p>
+      <p><%= link_to post.title, post %></p>
+      <p><%= post.created_at.strftime("%B, %d, %Y")%></p>
+      <em>
+        <%= post.user.handle %>
+      </em>
+   </p>
+   <% end %>
+</div>
